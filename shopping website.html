@@ -1,319 +1,305 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopzone website</title>
-    <style>
-        body{
-            background: rgb(39, 180, 235);
-            background-image: linear-gradient(to right, rgb(39, 180, 235), rgb(255, 255, 255),red);
-        }
-        div.box1{
-            background-color:whitesmoke;
-           word-spacing: 90px;
-            height: 50px;
-            width: auto;
-            color: whitesmoke;
-            border-radius: 10px;
-           
-        }
-        #a1{
-            display: inline-block;
-            font-size: 20px;
-            color: white;
-            margin: 10px;
-            color: white;
-           
-           
-               
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ShopZone</title>
 
-        }
-        button{
-            display: inline;
-            height:50px;
-            width: 80px;
-            background-color: whitesmoke;
-            font-size: 20px;
-            border-radius: 10px;
-        }
-        textarea{
-            display: inline;
-            font-size: 20px;
-            border-radius: 10px;
-            
-        }
-        li{
-            color: white;
-            padding: 5px;
-            margin: 10px;
-            border-radius: 10px;
-            background-color: whitesmoke;
-            display: inline-block;
-            font-size: 20px;
-            
-        }
-        .container1 {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            margin-top: 20px;
-         }
-
-.home-section {
-    margin: 30px ;
-    width: 350px;
-    background: white;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:"Segoe UI",Tahoma,sans-serif;
 }
 
-.home-section h2 {
-    font-size: 22px;
-    margin-bottom: 15px;
+body{
+  background-image:linear-gradient(
+    to right,
+    rgb(39,180,235),
+    rgb(255,255,255),
+    rgb(255,90,90)
+  );
 }
 
-.items {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 15px;
+header{
+  padding:20px;
+  text-align:center;
+  position:relative;
 }
 
-.card img {
-    width: 100%;
-    height: 130px;
-    object-fit: cover;
-    border-radius: 4px;
+.cart{
+  position:absolute;
+  top:25px;
+  right:30px;
+  background:rgb(255,255,255);
+  padding:10px 18px;
+  border-radius:25px;
+  font-weight:bold;
+  box-shadow:0 8px 18px rgba(80,80,80,0.25);
 }
 
-.card p {
-    margin-top: 5px;
-    font-size: 14px;
+.cart span{
+  background:rgb(255,90,90);
+  color:rgb(255,255,255);
+  padding:3px 8px;
+  border-radius:50%;
+  margin-left:6px;
 }
 
-.explore {
-    display: inline-block;
-    margin-top: 15px;
-    color: rgb(9, 202, 245);
-    text-decoration: none;
-    font-size: 15px;
+.search-bar{
+  display:flex;
+  justify-content:center;
+  gap:12px;
+  margin-top:15px;
 }
-h1{
-                background-color: rgb(83, 80, 80);
-                color:white;
-                text-align: center;
-                width: 100%;
-            }
 
-        @media (max-width: 1024px){
+.search-bar textarea{
+  resize:none;
+  width:420px;
+  padding:12px;
+  font-size:18px;
+  border-radius:14px;
+  border:none;
+  box-shadow:0 10px 22px rgba(80,80,80,0.25);
+}
 
-        } @media (max-width: 600px){
+.search-bar button{
+  width:120px;
+  font-size:18px;
+  border:none;
+  border-radius:14px;
+  background:rgb(255,90,90);
+  color:rgb(255,255,255);
+  cursor:pointer;
+}
 
-        }
-        
-    </style>
+nav{
+  background:rgb(255,255,255);
+  width:95%;
+  margin:25px auto;
+  border-radius:18px;
+  box-shadow:0 12px 28px rgba(80,80,80,0.25);
+}
+
+nav ul{
+  list-style:none;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  padding:15px;
+}
+
+nav ul li a{
+  text-decoration:none;
+  font-size:18px;
+  font-weight:bold;
+  padding:10px 22px;
+  border-radius:22px;
+  color:rgb(40,40,40);
+}
+
+nav ul li a:hover{
+  background:rgb(39,180,235);
+  color:rgb(255,255,255);
+}
+
+.home-container{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:30px;
+  padding:35px;
+}
+
+.home-section{
+  background:rgb(255,255,255);
+  border-radius:22px;
+  padding:22px;
+  box-shadow:0 14px 30px rgba(80,80,80,0.25);
+  transition:0.4s;
+  position:relative;
+}
+
+.home-section::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  height:6px;
+  
+  border-radius:22px 22px 0 0;
+}
+
+.home-section:hover{
+  transform:translateY(-10px);
+}
+
+.home-section h2{
+  font-size:22px;
+  margin-bottom:18px;
+  color:rgb(50,50,50);
+}
+
+.items{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:15px;
+}
+
+.card img{
+  width:100%;
+  height:140px;
+  object-fit:cover;
+  border-radius:14px;
+}
+
+.card p{
+  font-size:14px;
+  margin-top:8px;
+  color:rgb(90,90,90);
+}
+
+.explore{
+  display:inline-block;
+  margin-top:18px;
+  font-size:15px;
+  font-weight:bold;
+  padding:8px 18px;
+  border-radius:20px;
+  background:rgb(39,180,235);
+  color:rgb(255,255,255);
+  text-decoration:none;
+}
+
+.explore:hover{
+  background:rgb(255,90,90);
+}
+
+footer{
+  margin-top:35px;
+  background:linear-gradient(
+    to right,
+    rgb(39,180,235),
+    rgb(255,90,90)
+  );
+  text-align:center;
+  padding:18px;
+  color:rgb(255,255,255);
+  font-size:18px;
+}
+.cart-link{
+  text-decoration:none;
+  color:inherit;
+}
+
+
+@media(max-width:1024px){
+  .home-container{
+    grid-template-columns:repeat(2,1fr);
+  }
+}
+
+@media(max-width:600px){
+  .home-container{
+    grid-template-columns:1fr;
+  }
+  .search-bar textarea{
+    width:260px;
+  }
+}
+</style>
 </head>
+
 <body>
-    
-    <center>
-     
-    <img src="shopzone2.png" alt="Amazon Logo" width="300px" height="100px"><br>
-    <div class=" container1">
-    
-     <textarea rows="2" cols="50">Search for products, brands and more</textarea> 
-            <button>Search</button></div></div>
-    
-    <div class="box1">        
-    <nav>
-        <ul>
-            
-            <li id="a1"><a href="fashion.html"><b>Fashion</b></a></li>
-            <li id="a1"><a href="mobile.html"><b>Mobile</b></a></li>
-            <li id="a1"><a href="electronic.html"><b>Electronics</b></a></li>
-            <li id="a1"><a href="home&kitchen.html"><b>Home&Kitchen</b></a></li>
-            <li id="a1"><a href="toys.html"><b>Toys</b></a></li>
-            <li id="a1"><a href="books.html"><b>Books</b></a></li>
-            <li id="a1"><a href="sports.html"><b>Sports</b></a></li>
-        </ul></nav></div> </center> <hr>
+
+<header>
+  <img src="shopzone2.png" width="280" height="90">
+  <a href="cart.html" class="cart-link">
+  <div class="cart">Cart </div>
+</a>
 
 
+  <div class="search-bar">
+    <textarea rows="1">Search for products, brands and more</textarea>
+    <button>Search</button>
+  </div>
+</header>
 
-        <div class="home-section">
-    <h2>Decorate your home in style</h2>
+<nav>
+<ul>
+  <li><a href="fashion.html">Fashion</a></li>
+  <li><a href="mobile.html">Mobile</a></li>
+  <li><a href="electronic.html">Electronics</a></li>
+  <li><a href="home&kitchen.html">Home & Kitchen</a></li>
+  <li><a href="toys.html">Toys</a></li>
+  <li><a href="books.html">Books</a></li>
+  <li><a href="sports.html">Sports</a></li>
+</ul>
+</nav>
 
-    <div class="items">
-        <div class="card">
-            <img src="bedsheet.jpg" alt="">
-            <p>Cushion covers, bedsheets & more</p>
-        </div>
+<div class="home-container">
 
-        <div class="card">
-            <img src="showpiece.jpg" alt="">
-            <p>Showpieces, vases & more</p>
-        </div>
-
-        <div class="card">
-            <img src="storage.jpg" alt="">
-            <p>Home storage</p>
-        </div>
-
-        <div class="card">
-            <img src="light.jpg" alt="">
-            <p>Lighting solutions</p>
-        </div>
-    </div>
-
-    <a href="#" class="explore">Explore all</a>
-</div>
 <div class="home-section">
-    <h2>Decorate your home in style</h2>
-
-    <div class="items">
-        <div class="card">
-            <img src="bedsheet.jpg" alt="">
-            <p>Cushion covers, bedsheets & more</p>
-        </div>
-
-        <div class="card">
-            <img src="showpiece.jpg" alt="">
-            <p>Showpieces, vases & more</p>
-        </div>
-
-        <div class="card">
-            <img src="storage.jpg" alt="">
-            <p>Home storage</p>
-        </div>
-
-        <div class="card">
-            <img src="light.jpg" alt="">
-            <p>Lighting solutions</p>
-        </div>
-    </div>
-
-    <a href="#" class="explore">Explore all</a>
+<h2>Mobile Phones</h2>
+<div class="items">
+  <div class="card"><img src="mobile1.jpg"><p>Vivo Smartphones</p></div>
+  <div class="card"><img src="mobile2.jpeg"><p>Samsung Galaxy</p></div>
+  <div class="card"><img src="mobile3.jpeg"><p>OnePlus Series</p></div>
+  <div class="card"><img src="mobile4.jpeg"><p>Realme Phones</p></div>
 </div>
+<a href="mobile.html" class="explore">Explore All</a>
+</div>
+
 <div class="home-section">
-    <h2>Decorate your home in style</h2>
-
-    <div class="items">
-        <div class="card">
-            <img src="bedsheet.jpg" alt="">
-            <p>Cushion covers, bedsheets & more</p>
-        </div>
-
-        <div class="card">
-            <img src="showpiece.jpg" alt="">
-            <p>Showpieces, vases & more</p>
-        </div>
-
-        <div class="card">
-            <img src="storage.jpg" alt="">
-            <p>Home storage</p>
-        </div>
-
-        <div class="card">
-            <img src="light.jpg" alt="">
-            <p>Lighting solutions</p>
-        </div>
-    </div>
-
-    <a href="#" class="explore">Explore all</a>
+<h2>Books Collection</h2>
+<div class="items">
+  <div class="card"><img src="books.jpg"><p>Academic Books</p></div>
+  <div class="card"><img src="books2.jpg"><p>Story Books</p></div>
+  <div class="card"><img src="books3.jpg"><p>Novels</p></div>
+  <div class="card"><img src="books4.jpg"><p>Competitive Exams</p></div>
 </div>
+<a href="books.html" class="explore">Explore All</a>
+</div>
+
 <div class="home-section">
-    <h2>Decorate your home in style</h2>
-
-    <div class="items">
-        <div class="card">
-            <img src="bedsheet.jpg" alt="">
-            <p>Cushion covers, bedsheets & more</p>
-        </div>
-
-        <div class="card">
-            <img src="showpiece.jpg" alt="">
-            <p>Showpieces, vases & more</p>
-        </div>
-
-        <div class="card">
-            <img src="storage.jpg" alt="">
-            <p>Home storage</p>
-        </div>
-
-        <div class="card">
-            <img src="light.jpg" alt="">
-            <p>Lighting solutions</p>
-        </div>
-    </div>
-
-    <a href="#" class="explore">Explore all</a>
+<h2>Toys & Games</h2>
+<div class="items">
+  <div class="card"><img src="TOYS.webp"><p>Die-cast Cars</p></div>
+  <div class="card"><img src="TOYS2.jpg"><p>Robots</p></div>
+  <div class="card"><img src="TOYS3.jpg"><p>Soft Toys</p></div>
+  <div class="card"><img src="TOYS4.jpg"><p>Kids Plush</p></div>
 </div>
+<a href="toys.html" class="explore">Explore All</a>
+</div>
+
 <div class="home-section">
-    <h2>Decorate your home in style</h2>
-
-    <div class="items">
-        <div class="card">
-            <img src="bedsheet.jpg" alt="">
-            <p>Cushion covers, bedsheets & more</p>
-        </div>
-
-        <div class="card">
-            <img src="showpiece.jpg" alt="">
-            <p>Showpieces, vases & more</p>
-        </div>
-
-        <div class="card">
-            <img src="storage.jpg" alt="">
-            <p>Home storage</p>
-        </div>
-
-        <div class="card">
-            <img src="light.jpg" alt="">
-            <p>Lighting solutions</p>
-        </div>
-    </div>
-
-    <a href="#" class="explore">Explore all</a>
+<h2>Home & Kitchen</h2>
+<div class="items">
+  <div class="card"><img src="HOMEAND KITCHEN.webp"><p>Kitchen Tools</p></div>
+  <div class="card"><img src="HOMEAND KITECHEN2.webp"><p>Wall Clocks</p></div>
+  <div class="card"><img src="HOMEAND KITCHEN3.webp"><p>Ladders</p></div>
+  <div class="card"><img src="HOMEAND KITCHEN4.webp"><p>Knife Sets</p></div>
 </div>
+<a href="home&kitchen.html" class="explore">Explore All</a>
+</div>
+
 <div class="home-section">
-    <h2>Decorate your home in style</h2>
-
-    <div class="items">
-        <div class="card">
-            <img src="bedsheet.jpg" alt="">
-            <p>Cushion covers, bedsheets & more</p>
-        </div>
-
-        <div class="card">
-            <img src="showpiece.jpg" alt="">
-            <p>Showpieces, vases & more</p>
-        </div>
-
-        <div class="card">
-            <img src="storage.jpg" alt="">
-            <p>Home storage</p>
-        </div>
-
-        <div class="card">
-            <img src="light.jpg" alt="">
-            <p>Lighting solutions</p>
-        </div>
-    </div>
-
-    <a href="#" class="explore">Explore all</a>
+<h2>Sports & Fitness</h2>
+<div class="items">
+  <div class="card"><img src="sports1.jpg"><p>Skipping Rope</p></div>
+  <div class="card"><img src="sports2.webp"><p>Cricket Bat</p></div>
+  <div class="card"><img src="sports3.webp"><p>Badminton</p></div>
+  <div class="card"><img src="sports4.webp"><p>Football</p></div>
+</div>
+<a href="sports.html" class="explore">Explore All</a>
 </div>
 
-          
- <footer><h1><I>Back to Top</I></h1> 
+</div>
 
+<footer>
+Back to Top
+</footer>
 
-
-
-
-</footer>         
-    
-    
-    
 </body>
 </html>

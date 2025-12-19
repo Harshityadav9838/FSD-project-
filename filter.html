@@ -1,93 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FILTER</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FILTER</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family:Segoe UI, Tahoma, sans-serif;
+    }
+
+    body{
+      background-image: linear-gradient(
+        to right,
+        rgb(39,180,235),
+        rgb(255,255,255),
+        rgb(255,90,90)
+      );
+    }
+
+    h1{
+      background: rgb(70,70,70);
+      color: rgb(255,255,255);
+      text-align:center;
+      padding:15px;
+      border-radius:12px;
+      margin:20px;
+      letter-spacing:2px;
+    }
+
+    .layout{
+      display:grid;
+      grid-template-columns: 260px 1fr;
+      gap:30px;
+      padding:30px;
+    }
+
+    .sidebar{
+      background: rgb(255,255,255);
+      border-radius:18px;
+      padding:20px;
+      box-shadow:0 8px 20px rgba(70,70,70,0.25);
+    }
+
+    .filter-item{
+      padding:12px;
+      margin:10px 0;
+      text-align:center;
+      font-size:16px;
+      border-radius:12px;
+      background: rgb(240,240,240);
+      cursor:pointer;
+    }
+
+    .filter-item:hover{
+      background: rgb(39,180,235);
+      color: rgb(40,40,40);
+    }
+
+    .content{
+      background: rgb(255,255,255);
+      border-radius:18px;
+      padding:15px;
+      box-shadow:0 8px 20px rgba(70,70,70,0.25);
+    }
+
+    iframe{
+      width:100%;
+      height:550px;
+      border-radius:12px;
+      border:2px solid rgb(200,200,200);
+    }
+
+    @media(max-width:900px){
+      .layout{
+        grid-template-columns:1fr;
+      }
+    }
+  </style>
 </head>
+
 <body>
-        <style>
-            body{
-                background-color: skyblue;
-                 background-image: linear-gradient(to right, rgb(39, 180, 235), rgb(255, 255, 255),red);
-                
-            }
-            h1{
-                background-color: black;
-                color:white;
-                text-align: center;
-                width: 100%;
-                border-radius: 10px;
-            }
-            .home-section {
-    margin: 30px ;
-    width: 100px;
-    background: white;
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-            }
-            .container{
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            grid-template-rows: repeat(1, 1fr);
-          
-        }
-        .box{
-            margin: 20px;
-           justify-content: center;
-            
-        }
-         
-            
-            
-    </style>
-</head>
-<body>
-     <center>
-     
-    <img src="shopzone2.png" alt="Amazon Logo" width="300px" height="100px"><br>
-     </center> <hr>
-    <h1><I>FILTER OPTIONS</I></h1>
-     
-    <div class="container">
-        
-    <div class="home-section">
-        <hr>
-        <div class="box">
-            <p>PRICE</p>
-        </div>
-        <hr>
-        <div class="box">
-            <p>BRAND</p>
-        </div>
-        <hr>
-         <div class="box">
-            <p>TYPE</p>
-        </div>
-        <hr>
-        <div class="box">
-            <p>DISCOUNT</p>
-        </div>
-        <hr>
-        <div class="box">
-            <p>OFFER</p>
-        </div>
-        <hr>
-        <div class="box">
-            <p>NEW ARRIVALS</p>
-        </div>
-        <hr>
-        <div class="box">
-            <p>CUSTOMER RATING</p>
-        </div>
-        <hr>
-        
+
+  <center>
+    <img src="shopzone2.png" width="300" height="100">
+  </center>
+
+  <h1>FILTER OPTIONS</h1>
+
+  <div class="layout">
+
+    <div class="sidebar">
+      <div class="filter-item">PRICE</div>
+      <div class="filter-item">BRAND</div>
+      <div class="filter-item">TYPE</div>
+      <div class="filter-item">DISCOUNT</div>
+      <div class="filter-item">OFFER</div>
+      <div class="filter-item">NEW ARRIVALS</div>
+      <div class="filter-item">CUSTOMER RATING</div>
     </div>
-    <div class="box">
-    <iframe src="price.html"  width="600"  height="550" style="border:2px solid black;">
-    </iframe>
+
+    <div class="content">
+      <iframe src="price.html"></iframe>
     </div>
-    </div>
+
+  </div>
+
 </body>
 </html>
